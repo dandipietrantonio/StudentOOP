@@ -11,7 +11,7 @@ using namespace std;
         station_nm(nm), my_loc(loc) {
     }
 
-    //Output for Weather Class COMMENTED OUT FOR TESTING
+    //Output for Weather Class
     ostream& operator<<(ostream& os, const Weather& w){
         os << w.get_name() << " rating: " << w.get_rating() << "; " << w.my_loc << endl;
         for (WReading wreading: w.wreadings) { 
@@ -45,7 +45,7 @@ using namespace std;
     }
 
 //WReading Class
-    //Output for WReading Class - TEMP. COMMENTED OUT FOR TESTING
+    //Output for WReading Class
     ostream& operator<<(ostream& os, const WReading& wr){
         os << wr.date << " " << wr.temperature << " " << wr.humidity << " " << wr.windspeed;
         return os;
