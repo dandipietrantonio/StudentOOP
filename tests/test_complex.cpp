@@ -1,6 +1,7 @@
 #include <cassert>
 #include <iostream>
 #include <iomanip>
+#include <cmath>
 #include "../my_code/complex.h"
 
 using namespace std;
