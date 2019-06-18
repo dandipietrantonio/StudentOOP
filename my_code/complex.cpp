@@ -1,7 +1,7 @@
 #include <iostream>
 #include <istream>
 #include <iomanip>
-#include <cmath>
+#include <cmath> //for abs() function to work with travis
 #include "complex.h"
 
 using namespace std;
@@ -53,7 +53,7 @@ Complex& Complex::operator++() {
 }
 
 //c++ Overloading
-Complex Complex::operator++(int dummy) { // how do i return the old value with *this???????
+Complex Complex::operator++(int dummy) {
     Complex val_before = *this;
     real += 1;
     return val_before;
@@ -66,7 +66,7 @@ Complex& Complex::operator--() {
 }
 
 //c-- Overloading
-Complex Complex::operator--(int dummy) { // how do i return the old value with *this???????
+Complex Complex::operator--(int dummy) {
     Complex val_before = *this;
     real -= 1;
     return val_before;

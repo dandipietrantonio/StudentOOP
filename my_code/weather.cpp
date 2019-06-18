@@ -54,9 +54,8 @@ using namespace std;
 //Image Class:
     //Constructor for Image Class
     Image::Image(int w, int h, std::string flnm)
-        : width(w), height(h)
+        : width(w), height(h), filename(flnm)
     {
-        filename = flnm;
         image_buf = new char[image_sz()];
     }
     //Copy Constructor for Image Class:
@@ -69,7 +68,7 @@ using namespace std;
         if (image_buf != nullptr) {delete image_buf;}
     }
 
-    //Assignment Override for Image Class
+    //Assignment Overload for Image Class
     Image& Image::operator=(const Image& img2) {
         if (image_buf != nullptr) {delete image_buf;}
         copy_fields(img2);
@@ -93,6 +92,6 @@ using namespace std;
     }
 
     //Display Method for Image Class
-    string Image::display(std::string s) {
+    string Image::display(string s) {
         return "Displaying image " + s;
     }
