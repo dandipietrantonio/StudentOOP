@@ -37,6 +37,12 @@ using namespace std;
         wreadings.push_back(wr);
     }
 
+    void Weather::display_images() {
+        for (WReading wr : wreadings) {
+            wr.display();
+        }
+    }
+
 //GPS Class
     //Output for GPS Class
     ostream& operator<<(ostream& os, const GPS& gps){
@@ -49,6 +55,16 @@ using namespace std;
     ostream& operator<<(ostream& os, const WReading& wr){
         os << wr.date << " " << wr.temperature << " " << wr.humidity << " " << wr.windspeed;
         return os;
+    }
+
+    //Methods for WReading Class
+    void WReading::display() {
+        if (!image) {
+            cout << "Image pointer is null" << endl;
+        }
+        else {
+            image->display();
+        }
     }
 
 //Image Class:
@@ -92,6 +108,34 @@ using namespace std;
     }
 
     //Display Method for Image Class
-    string Image::display(string s) {
-        return "Displaying image " + s;
+    void Image::display() {
+        cout << "BASE IMAGE" << endl;;
+    }
+
+    //Displaying for Classes Inherited by Image
+        //Jpeg
+        void Jpeg::display() {
+            cout << "JPEG" << endl;
+        }
+
+        //Png
+        void Png::display() {
+            cout << "PNG" << endl;
+        }
+
+        //Gif
+        void Gif::display() {
+            cout << "Gif" << endl;
+        }
+
+//Date Class
+    //Constructor for Date Class
+    Date::Date(int d, int m, int y) :
+        day(d), month(m), year(y) {
+        }
+
+    //Output for Date Class
+    ostream& operator<<(ostream& os, const Date& date){
+        os << date.month << "/" << date.day << "/" << date.year;
+        return os;
     }
