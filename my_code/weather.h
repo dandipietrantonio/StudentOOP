@@ -87,7 +87,7 @@ class WReading {
     friend std::ostream& operator<<(std::ostream& os, const WReading& wr);
  public:
     WReading(Date dt, double temp, double hum, double ws, Image* image) :
-        date(dt), temperature(temp), humidity(hum), windspeed(ws)
+        date(dt), temperature(temp), humidity(hum), windspeed(ws), image(image)
     {}
 
     double get_tempF();

@@ -13,7 +13,7 @@ void get_wreadings(string filenm, Weather& w) {
     Png* png = new Png(100, 100, "file.png");
 
     vector<Image*> images = {base, gif, jpeg, png, nullptr};
-    
+
     ifstream rfile(filenm);
     if (!rfile) {
         cout << "Could not read input file: " << filenm << endl;
