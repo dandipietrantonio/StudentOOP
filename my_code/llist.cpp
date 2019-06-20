@@ -18,8 +18,8 @@ ostream& operator<<(ostream& os, const Node* nd) {
  * Add a node to the end of a list.
  * */
 void add_at_end(Node*& head, int d) {
-    if (!head) head.next = Node(d);
-    else add_at_end(head.next);
+    if (!head) head->next = Node(d);
+    else add_at_end(head->next);
 }
 
 
@@ -28,12 +28,17 @@ void add_at_end(Node*& head, int d) {
  * Let's do this recursively!
  * */
 void print_list(ostream& os, const Node* curr) {
+    if (!curr){
+        cout << curr << " ";
+        print_list(curr->next)
+    }
 }
 
 /*
  * Add a node at the front of a linked list.
  * */
 void add_at_front(Node*& head, int d) {
+    new_front = new Node(d, head);
 }
 
 
@@ -41,5 +46,6 @@ void add_at_front(Node*& head, int d) {
  * Get the last node of a list.
  * */
 Node* last(Node* head) {
-    return nullptr;
+    if (!(head->next)) last(head->next);
+    else return head;
 }
