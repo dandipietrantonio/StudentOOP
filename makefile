@@ -28,7 +28,6 @@ test_vector: $(TEST_DIR)/test_vector
 
 $(TEST_DIR)/test_vector: $(STUDENT_DIR)/vector.cpp $(TEST_DIR)/test_vector.cpp
 
-
 tests: test_hello test_basics test_pointers test_complex test_vector test_llist
 	tests/test_hello
 	tests/test_basics
