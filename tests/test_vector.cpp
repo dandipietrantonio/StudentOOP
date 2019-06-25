@@ -39,7 +39,6 @@ int main() {
 
     MyVec v4 = MyVec(10, 20);
     for (int i : v4) {
-        cout << i << endl;
         assert(i == 20);
     }
 }
