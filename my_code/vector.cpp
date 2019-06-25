@@ -17,6 +17,16 @@ using namespace std;
         data = new int[capacity];
     }
 
+//Size & Integer Constructor for MyVec
+    MyVec::MyVec(int size, int val){
+        sz = size;
+        capacity = sz * 2;
+        data = new int[capacity];
+        for (int i=0; i < sz; i++) {
+            data[i] = val;
+        }
+    }
+
 //Copy Constructor for MyVec
     MyVec::MyVec(const MyVec& v2) {
         sz = v2.sz;
@@ -82,4 +92,14 @@ using namespace std;
 //Operator Overload: [] by Reference
     int& MyVec::operator[](int i) {
         return data[i];
+    }
+
+
+//Iterator for MyVec:
+    MyVec::Iterator MyVec::begin() const {
+    return MyVec::Iterator(data);
+    }
+
+    MyVec::Iterator MyVec::end() const {
+        return MyVec::Iterator(data + size());
     }
