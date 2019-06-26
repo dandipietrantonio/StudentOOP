@@ -1,5 +1,6 @@
 #include <iostream>
 
+using namespace std;
 const int DEF_CAPACITY = 10;
 const int CAPACITY_MULT = 2;
 
@@ -76,9 +77,6 @@ void print_vector(const MyVec<T>& v);
 
 template <typename T>
 bool operator==(MyVec<T>& v1, MyVec<T>& v2);
-
-
-using namespace std;
 
 //Prints the Vector Element by Element
     template <typename T>
