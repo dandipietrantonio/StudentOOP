@@ -80,13 +80,23 @@ double doubled_func(double d, function<double(double)> f) {
     return 2*f(d);
 }
 
+class NegativeNumber : public exception {
+    public:
+        NegativeNumber(int n) : arg(n) {}
+        const char* what() const throw() {
+            return "Cannot use a negative number for the fibonacci sequence!";
+        }
+    private:
+        int arg;
+};
+
 class Fib {
     public:
         Fib() {
         }
 
         long long int operator()(long long int n) {
-            if (n < 0) throw (NoNegative(n));
+            if (n < 0) throw (NegativeNumber(n));
             else if (n <= 1) return 1;
             else return operator()(n - 1) + operator()(n - 2);
         }
@@ -95,7 +105,6 @@ class Fib {
         const int NOT_CALCED = -1;
     private:
 };
-
 
 double square_func(double d, function<double(double)> f) {
     return f(d) * f(d);
@@ -119,7 +128,7 @@ int main() {
         long long int f = fib(FIB_NUM);
         cout << "fib(" << FIB_NUM << ") == " << f << endl;
     }
-    catch (NoNegative& e) {
+    catch (NegativeNumber& e) {
         cerr << "Got a negative argument for fib: " << e.what() << endl;
     }
 
@@ -132,7 +141,6 @@ int main() {
     cout << "Cube of cos 1 = " << d << endl;
     d = half_func(1, [](double arg) { return cos(arg);});
     cout << "Half of cos 1 = " << d << endl;
-    // To show that I use my secant class, I will call it here.
     d = doubled_func(1, [](double arg) { return cos(arg);});
     cout << "Two times cos 1 = " << d << endl;
 }
