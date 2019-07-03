@@ -90,20 +90,32 @@ class NegativeNumber : public exception {
         int arg;
 };
 
+int fib_input(int n) {return n-1;}
+
 class Fib {
     public:
         Fib() {
-        }
+            for (int i = 0; i <= MAX_FIB; i++){
+                fib_array[i] = NOT_CALCED;
+            }
+         }
 
         long long int operator()(long long int n) {
             if (n < 0) throw (NegativeNumber(n));
-            else if (n <= 1) return 1;
-            else return operator()(n - 1) + operator()(n - 2);
+            else if (n <= 1) {
+                fib_array[n+1] = 1;
+                return fib_array[n+1];
+            }
+            else {
+                fib_array[n+1] = operator()(n - 1) + operator()(n - 2);
+                return fib_array[n+1];
+            }
         }
 
         const int MAX_FIB = 100;
         const int NOT_CALCED = -1;
     private:
+        int* fib_array = new int[MAX_FIB];
 };
 
 double square_func(double d, function<double(double)> f) {
@@ -131,6 +143,7 @@ int main() {
     catch (NegativeNumber& e) {
         cerr << "Got a negative argument for fib: " << e.what() << endl;
     }
+    cout << "Fib 19 = " << fib(19) << endl;;
 
     // then lambdas -- use several functions from cmath here:
     d = square_func(0, [](double arg) { return sin(arg); });
