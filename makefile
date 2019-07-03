@@ -44,6 +44,10 @@ test_stl: $(TEST_DIR)/test_stl
 
 $(TEST_DIR)/test_stl: $(TEST_DIR)/test_stl.cpp
 
+test_functors: $(TEST_DIR)/test_functors
+
+$(TEST_DIR)/test_functors: $(TEST_DIR)/test_functors.cpp
+
 
 tests: test_hello test_basics test_pointers test_complex test_vector test_llist 
 	tests/test_hello
