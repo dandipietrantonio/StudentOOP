@@ -41,10 +41,10 @@ bool operator== (const Complex& c1, const Complex& c2) {
 }
 
 //Boolean Overloading
-Complex::operator bool() const {
-    if (real != 0 || imag != 0) {return true;}
-    else {return false;}
-}
+// Complex::operator bool() const {
+//     if (real != 0 || imag != 0) {return true;}
+//     else {return false;}
+// }
 
 //++c Overloading
 Complex& Complex::operator++() {
@@ -74,14 +74,14 @@ Complex Complex::operator--(int dummy) {
 
 
 //Gets real number portion
-double Complex::get_real() const {
-    return real;
-}
+// double Complex::get_real() const {
+//     return real;
+// }
 
 //Gets imaginary portion
-double Complex::get_imag() const {
-    return imag;
-}
+// double Complex::get_imag() const {
+//     return imag;
+// }
 
 //Multiplies by a scalar
 Complex Complex::operator*(const int i) {
@@ -91,9 +91,9 @@ Complex Complex::operator*(const int i) {
 }
 
 //Subtracts by another complex number
- Complex Complex::operator-(const Complex& c){
-     return Complex(real - c.get_real(), imag - c.get_imag());
- }
+//  Complex Complex::operator-(const Complex& c){
+//      return Complex(real - c.get_real(), imag - c.get_imag());
+//  }
 
 //Subtracts by another number and assigns difference to self
 Complex Complex::operator-=(const Complex& c){
@@ -103,7 +103,6 @@ Complex Complex::operator-=(const Complex& c){
 }
 
 //Addition with another complex number
- Complex Complex::operator+(const Complex& c){
-     return Complex(real + c.get_real(), imag + c.get_imag());
- }
-
+//  Complex Complex::operator+(const Complex& c){
+//      return Complex(real + c.get_real(), imag + c.get_imag());
+//  }
