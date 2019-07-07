@@ -161,13 +161,13 @@ bool operator==(MyVec<T>& v1, MyVec<T>& v2);
     }
 
 
-// //Iterator for MyVec:
-//     template <typename T>
-//     MyVec::Iterator MyVec::begin() const {
-//     return MyVec::Iterator(data);
-//     }
+//Iterator for MyVec:
+    template <typename T>
+    MyVec::Iterator MyVec::begin() const {
+    return MyVec::Iterator(data);
+    }
 
-//     tempalte <typename T>
-//     MyVec::Iterator MyVec::end() const {
-//         return MyVec::Iterator(data + size());
-//     }
+    template <typename T>
+    MyVec::Iterator MyVec::end() const {
+        return MyVec::Iterator(data + size());
+    }

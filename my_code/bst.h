@@ -6,7 +6,7 @@ void indent(int level) {
 }
 
 template <typename T>
-class Bst {
+class Bst { 
         friend void print_bst(const Bst<T>& bst, int level=0) {
         indent(level);
         level++;

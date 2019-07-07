@@ -90,8 +90,6 @@ class NegativeNumber : public exception {
         int arg;
 };
 
-int fib_input(int n) {return n-1;}
-
 class Fib {
     public:
         Fib() {
@@ -143,7 +141,7 @@ int main() {
     catch (NegativeNumber& e) {
         cerr << "Got a negative argument for fib: " << e.what() << endl;
     }
-    cout << "Fib 19 = " << fib(19) << endl;;
+    cout << "Fib 19 = " << fib(18) << endl;;
 
     // then lambdas -- use several functions from cmath here:
     d = square_func(0, [](double arg) { return sin(arg); });
